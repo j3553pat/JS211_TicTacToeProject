@@ -30,7 +30,7 @@ const addMarker = (id) => {
   console.log(`We'll place a mark on square: ${id}`)
   // @TODO, Mix & Match. 
   // You will need the following pieces:
-  
+  document.getElementById.innerHTML = currentMarker
   // = currentMarker
   // .getElementById(id)
   // document
@@ -66,14 +66,61 @@ const checkForWin = () => {
 
 const horizontalWin = () => {
   // @TODO, Your code here: to check for horizontal wins
+  if (
+    (board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X") ||
+    (board[0][0] == "O" && board[0][1] == "O" && board[0][2] == "O")
+  ) {
+     return true
+  }
+  else if (
+    (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X") ||
+    (board[1][0] == "O" && board[1][1] == "O" && board[1][2] == "O")
+  ) {
+    return true
+  }
+  else if (
+    (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X") ||
+    (board[2][0] == "O" && board[2][1] == "O" && board[2][2] == "O")
+  ) {
+    return true
+  }
 }
+
 
 const verticalWin = () => {
   // @TODO, Your code here: to check for vertical wins
+  if (
+    (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X") ||
+    (board[0][0] == "O" && board[1][0] == "O" && board[2][0] == "O")
+  ) {
+    return true
+  } else if (
+    (board[0][1] == "X" && board[1][1] == "X" && board[2][1] == "X") ||
+    (board[0][1] == "O" && board[1][1] == "O" && board[2][1] == "O")
+  ) {
+    return true
+  } else if (
+    (board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X") ||
+    (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O")
+  ) {
+    return true
+  }
 }
+
 
 const diagonalWin = () => {
   // @TODO, Your code here: to check for diagonal wins
+  if (
+    (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X") ||
+    (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O")
+  ) {
+    return true
+  } else if (
+    (board[2][0] == "X" && board[1][1] == "X" && board[0][2] == "X") ||
+    (board[2][0] == "O" && board[1][1] == "O" && board[0][2] == "O")
+  ) {
+    return true
+  }
 }
 
 const changeMarker = () => {
