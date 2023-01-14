@@ -27,10 +27,11 @@ const handleClick = (element) => {
 }
 
 const addMarker = (id) => {
+   
   console.log(`We'll place a mark on square: ${id}`)
   // @TODO, Mix & Match. 
   // You will need the following pieces:
-  document.getElementById.innerHTML = currentMarker
+ document.getElementById(id).innerHTML = currentMarker
   // = currentMarker
   // .getElementById(id)
   // document
@@ -45,12 +46,14 @@ const updateBoard = (id) => {
   // parses the id string into a number then captures the first and last part of the newly created number as row & column
   const row = parseInt(id.charAt(0))
   const column = parseInt(id.charAt(2)) 
-
+  
   console.log(`you clicked the sq at ${row} and ${column}`)
+  
   console.log(board)
-
+  
   // @TODO, Your code here: use the above information to change the board variable(array of arrays)
   // HINT: in your browser open up the dev tools -> console
+  board[row][column] = currentMarker
 }
 
 const checkForWin = () => {
@@ -140,9 +143,15 @@ const resetBoard = () => {
     console.log(squares[i])
     squares[i].innerHTML = null
   }
-  
-  // @TODO, Your code here: make sure to reset the array of arrays to empty for a new game
+   board = [
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""]
+  ]
+  currentMarker = "X"
 }
+  // @TODO, Your code here: make sure to reset the array of arrays to empty for a new game
+
 
 // **BONUSES**
 
